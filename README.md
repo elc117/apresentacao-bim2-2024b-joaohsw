@@ -38,7 +38,7 @@ public Animation(float frameDuration, Array<? extends T> keyFrames) {
     setKeyFrames(frames);
 }
 ```
-Esse construtor recebe um Array de frames e cria um novo array interno do tipo correto usando ArrayReflection (outra classe de arrays da libGDX). Ele copia os conteúdos do Array fornecido para o array interno keyFrames.
+Esse construtor recebe um Array de frames e cria um novo array usando ArrayReflection (outra classe de arrays da libGDX). Ele copia os conteúdos do Array fornecido para o array interno keyFrames.
 ```java
 for (int i = 0, n = keyFrames.size; i < n; i++) {
     frames[i] = keyFrames.get(i);
@@ -48,7 +48,7 @@ Esse for percorre o objeto Array (keyFrames) e recupera cada frame com get().
 ```java
 T[] frames = (T[])ArrayReflection.newInstance(arrayType, keyFrames.size);
 ```
-O tamanho do Array é usado para alocar um novo array para armazenar os keyframes. A propriedade size da classe Array simplifica a determinação da quantidade de frames a serem copiados.
+O tamanho do Array é usado para alocar um novo array para armazenar os keyframes utilizando a propriedade size da classe.
 # Fontes consultadas
 https://github.com/libgdx \
 https://www.reddit.com/r/libgdx/
